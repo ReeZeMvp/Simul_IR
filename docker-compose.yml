@@ -8,6 +8,11 @@ services:
       args:
         - VITE_API_URL=http://backend:8000
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:80"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
     depends_on:
       backend:
         condition: service_healthy
