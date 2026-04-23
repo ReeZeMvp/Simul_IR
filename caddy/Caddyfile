@@ -1,0 +1,36 @@
+{
+  # Désactiver l'admin endpoint en prod
+  admin off
+}
+
+# Remplacer par votre domaine en production (ex: simulir.mondomaine.fr)
+# En dev local, utiliser http://localhost
+http://localhost {
+
+  # API backend
+  handle /api/* {
+    reverse_proxy backend:8000
+  }
+
+  handle /health {
+    reverse_proxy backend:8000
+  }
+
+  # Frontend React
+  handle {
+    reverse_proxy frontend:3000
+  }
+
+  encode gzip
+}
+
+# Exemple configuration production avec TLS automatique :
+# simulir.mondomaine.fr {
+#   handle /api/* {
+#     reverse_proxy backend:8000
+#   }
+#   handle {
+#     reverse_proxy frontend:3000
+#   }
+#   encode gzip
+# }

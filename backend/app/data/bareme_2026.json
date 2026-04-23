@@ -1,0 +1,59 @@
+{
+  "annee": 2026,
+  "source": "Loi de finances 2026 — service-public.fr",
+  "mis_a_jour": "2026-02-19",
+  "revalorisation": 0.009,
+  "tranches": [
+    { "max": 11497,  "taux": 0.00 },
+    { "max": 29315,  "taux": 0.11 },
+    { "max": 83823,  "taux": 0.30 },
+    { "max": 180294, "taux": 0.41 },
+    { "max": null,   "taux": 0.45 }
+  ],
+  "abattement": {
+    "min": 495,
+    "max": 14171,
+    "retraite_max": 4321
+  },
+  "plafond_demi_part": 1759,
+  "decote": {
+    "seul":   { "seuil": 1888, "base": 858 },
+    "couple": { "seuil": 3128, "base": 1444 }
+  },
+  "smic": {
+    "mensuel_brut": 1823.03,
+    "mensuel_net":  1426.30,
+    "annuel_brut":  21876.36
+  },
+  "csg_rate": 0.097,
+  "pee_cap": 36045,
+  "per": {
+    "plafond_min": 4637,
+    "taux_revenu": 0.10
+  },
+  "apl": {
+    "A":  { "p": 125, "cap": 450 },
+    "B1": { "p": 99,  "cap": 380 },
+    "B2": { "p": 89,  "cap": 330 },
+    "C":  { "p": 79,  "cap": 280 }
+  },
+  "ppa": {
+    "forfait_seul":   638.28,
+    "forfait_couple": 957.42,
+    "taux_revenu":    0.808,
+    "bonus_individuel_max": 198,
+    "bonus_seuil": 800,
+    "bonus_taux":  0.32
+  },
+  "pea": {
+    "plafond_versement": 150000,
+    "duree_exoneration_ir": 5,
+    "taux_ps": 0.172,
+    "taux_ir_avant_5ans": 0.128
+  },
+  "pfu": {
+    "taux_total": 0.30,
+    "taux_ir": 0.128,
+    "taux_ps": 0.172
+  }
+}

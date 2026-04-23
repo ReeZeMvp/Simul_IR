@@ -1,0 +1,52 @@
+{
+  "annee": 2027,
+  "source": "Projection indicative 2027 (revalorisation estimée 1.2%) — à mettre à jour après PLF 2027",
+  "mis_a_jour": "2026-04-23",
+  "revalorisation": 0.012,
+  "tranches": [
+    { "max": 11635,  "taux": 0.00 },
+    { "max": 29667,  "taux": 0.11 },
+    { "max": 84826,  "taux": 0.30 },
+    { "max": 182458, "taux": 0.41 },
+    { "max": null,   "taux": 0.45 }
+  ],
+  "abattement": {
+    "min": 501,
+    "max": 14341,
+    "retraite_max": 4373
+  },
+  "plafond_demi_part": 1780,
+  "decote": {
+    "seul":   { "seuil": 1911, "base": 869 },
+    "couple": { "seuil": 3165, "base": 1461 }
+  },
+  "smic": {
+    "mensuel_brut": 1844.87,
+    "mensuel_net":  1443.03,
+    "annuel_brut":  22138.44
+  },
+  "csg_rate": 0.097,
+  "pee_cap": 36479,
+  "apl": {
+    "A":  { "p": 127, "cap": 455 },
+    "B1": { "p": 100, "cap": 385 },
+    "B2": { "p": 90,  "cap": 334 },
+    "C":  { "p": 80,  "cap": 283 }
+  },
+  "ppa": {
+    "forfait_seul":   646.11,
+    "forfait_couple": 969.17,
+    "taux_revenu":    0.808
+  },
+  "pea": {
+    "plafond_versement": 150000,
+    "duree_exoneration_ir": 5,
+    "taux_ps": 0.172,
+    "taux_ir_avant_5ans": 0.128
+  },
+  "pfu": {
+    "taux_total": 0.30,
+    "taux_ir": 0.128,
+    "taux_ps": 0.172
+  }
+}

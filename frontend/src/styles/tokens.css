@@ -1,0 +1,165 @@
+/* ───────────────────────────────────────────────────────────
+   DESIGN TOKENS — Nexus design system (extrait du fichier source)
+   ─────────────────────────────────────────────────────────── */
+:root {
+  --bg: #f7f6f2;
+  --surface: #f9f8f5;
+  --surface-2: #fbfbf9;
+  --surface-off: #f3f0ec;
+  --border: #d4d1ca;
+  --border-s: #e5e2dc;
+  --text: #28251d;
+  --text-m: #7a7974;
+  --text-t: #a09e98;
+  --primary: #01696f;
+  --primary-l: #e3f1f2;
+  --primary-d: #015257;
+  --success: #437a22;
+  --success-l: #edf5e8;
+  --error: #a12c7b;
+  --error-l: #f8ecf4;
+  --warning: #964219;
+  --warning-l: #fef4ec;
+  --warning-b: #f0d08c;
+  --warning-t: #7a5f1a;
+  --gold: #d19900;
+  --shadow-s: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-m: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-l: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --r: 10px;
+  --r-s: 6px;
+  --r-l: 14px;
+  --r-xl: 20px;
+  --font: 'Satoshi', -apple-system, sans-serif;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='dark'] {
+  --bg: #171614;
+  --surface: #1c1b19;
+  --surface-2: #222120;
+  --surface-off: #141312;
+  --border: #393836;
+  --border-s: #2e2d2b;
+  --text: #cdccca;
+  --text-m: #797876;
+  --text-t: #5a5957;
+  --primary: #4f98a3;
+  --primary-l: #1a2e30;
+  --primary-d: #7cc4cf;
+  --success: #6daa45;
+  --success-l: #1c2a14;
+  --error: #d163a7;
+  --error-l: #2d1726;
+  --warning: #bb653b;
+  --warning-l: #2b2117;
+  --warning-b: #5c4d26;
+  --warning-t: #d4b95c;
+  --gold: #e8b520;
+  --shadow-s: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-m: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-l: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Reset ────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ── Form elements ────────────────────────────────────────── */
+select,
+input[type='number'] {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: var(--r-s);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-family: var(--font);
+  font-size: 0.84rem;
+  color: var(--text);
+  outline: none;
+  transition: border 0.2s;
+}
+
+select:focus,
+input[type='number']:focus {
+  border-color: var(--primary);
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--border);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--surface-2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--surface-2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Animations ───────────────────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.4s var(--ease) both;
+}
+
+.d1 { animation-delay: 0.05s; }
+.d2 { animation-delay: 0.1s; }
+.d3 { animation-delay: 0.15s; }
+.d4 { animation-delay: 0.2s; }
+.d5 { animation-delay: 0.25s; }
+.d6 { animation-delay: 0.3s; }
