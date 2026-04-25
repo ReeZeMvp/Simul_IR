@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   frontend:
     build:
@@ -43,7 +41,16 @@ services:
     depends_on:
       - frontend
       - backend
+    networks:
+      - default      # réseau interne simul_ir (accès à frontend + backend)
+      - caddy-net    # réseau partagé → accès aux containers frambourse-*
 
 volumes:
   caddy_data:
   caddy_certs:
+
+networks:
+  default:
+    driver: bridge
+  caddy-net:
+    external: true   # créé une seule fois : docker network create caddy-net

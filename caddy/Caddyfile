@@ -2,7 +2,8 @@
   admin off
 }
 
-:80 {
+# ── SimulIR ────────────────────────────────────────────────────────────────────
+simulir.kaalynn.fr {
   handle /api/* {
     reverse_proxy backend:8000
   }
@@ -13,6 +14,21 @@
 
   handle {
     reverse_proxy frontend:3000
+  }
+
+  encode gzip
+}
+
+# ── FramBourse ─────────────────────────────────────────────────────────────────
+# Le préfixe /api est retiré avant transmission au backend FastAPI
+frambourse.kaalynn.fr {
+  handle /api/* {
+    uri strip_prefix /api
+    reverse_proxy frambourse-api:8000
+  }
+
+  handle {
+    reverse_proxy frambourse-ui:3000
   }
 
   encode gzip
