@@ -1,13 +1,9 @@
 {
   admin off
-  # Cloudflare est en mode SSL Flexible : il parle HTTP plain au Pi sur :80.
-  # Les blocs "domaine:80" désactivent l'HTTPS automatique de Caddy (pas de Let's Encrypt)
-  # et routent par Host header — compatible avec n'importe quel proxy Cloudflare.
-  auto_https off
 }
 
 # ── SimulIR ────────────────────────────────────────────────────────────────────
-simulir.kaalynn.fr:80 {
+simulir.kaalynn.fr {
   handle /api/* {
     reverse_proxy backend:8000
   }
@@ -21,7 +17,7 @@ simulir.kaalynn.fr:80 {
 }
 
 # ── FramBourse ─────────────────────────────────────────────────────────────────
-frambourse.kaalynn.fr:80 {
+frambourse.kaalynn.fr {
   handle /api/* {
     uri strip_prefix /api
     reverse_proxy frambourse-api:8000
